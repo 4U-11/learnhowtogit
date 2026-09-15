@@ -1,11 +1,12 @@
 import random
+from inventory import show_inventory
 
 player_hp = 10
 energy = 3
 rooms = ["控制室", "货舱", "反应堆"]
 
 print("=== 失控空间站 ===")
-print("输入 explore 探索，输入 status 查看状态，输入 quit 退出。")
+print("输入 explore 探索，输入 status 查看状态，输入 inventory 查看背包，输入 quit 退出。")
 
 while True:
     command = input("\n> ").strip().lower()
@@ -32,6 +33,9 @@ while True:
     elif command == "status":
         print(f"\n生命值：{player_hp}/10")
         print(f"能源：{energy}")
+
+    elif command == "inventory":
+        show_inventory()
 
     elif command == "quit":
         print("你离开了空间站。")
